@@ -2,7 +2,7 @@
 
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
-<a class="navbar-brand" href="index.html">John Doe </a>
+<a class="navbar-brand" href="index.html">Vedanth V Baliga </a>
 <div class="hamburger_wrapper navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
   <div id="js-hamburger" class="hamburger">
@@ -146,10 +146,10 @@ let footer = $(`
     
 
     <div class="rounded-social-buttons tag">
-    <a class="social-button twitter" href="#" target="_blank">
+    <a class="social-button twitter" href="https://twitter.com/BaligaVedanth" target="_blank">
     <!-- SVG code for twitter icon -->
-    <svg class="twitter-icon-footer" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500"
+    <svg class="twitter-icon-footer" version="1.1" id="Layer_1" xmlns="https://twitter.com/BaligaVedanth"
+        xmlns:xlink="https://twitter.com/BaligaVedanth" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500"
         xml:space="preserve">
         <!-- bird body -->
         <path id="body" fill="#5DA8DC" d="M142.9,364.1c-1.6,1-3,1.7-4,2.3c-3,1.5-7.9,3.8-14.9,6.9c-7,3.1-14.7,5.7-23.1,7.9
@@ -204,7 +204,7 @@ let footer = $(`
     </svg>
     </a>
 
-    <a class="social-button linkedin" href="" target="_blank" >
+    <a class="social-button linkedin" href="https://www.linkedin.com/in/vedanthbaliga/" target="_blank" >
     <!-- svg code for linkedin icon -->
       <svg class="linkedin-icon-footer" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 24 24" fill="#0e76a8"
         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
@@ -216,18 +216,7 @@ let footer = $(`
 
 
 
-    <a class="social-button instagram" href="" target="_blank" >
-    <!-- svg code for instagram icon -->
-      <svg class="instagram-icon-footer" x="0px" y="0px" viewBox="0 0 202.5 202.5"
-        style="enable-background:new 0 0 202.5 202.5;">
-        <circle id="littleCircle" class="st0" cx="101" cy="101.5" r="18.9" />
-        <circle id="shutter" class="st0" cx="101" cy="101.5" r="8" />
-        <circle id="lens" class="st0" cx="125.5" cy="78.6" r="2.9" />
-        <path id="camera" class="st0" d="M79,60.5h44c10.5,0,19,8.5,19,19v44c0,10.5-8.5,19-19,19H79c-10.5,0-19-8.5-19-19v-44                                                                            C60,69,68.5,60.5,79,60.5z" />
-      </svg>
-    </a>
-
-    <a class="social-button github" href="#" target="_blank">
+    <a class="social-button github" href="https://github.com/vedanthv" target="_blank">
     <!-- SVG code for Github icon -->
     <svg class="github-icon-footer" width="45px" height="45px" viewBox="0 0 300 300">
         <!-- body -->
@@ -256,65 +245,65 @@ let upArrow = $(`
 `);
 
 //function for the "Scroll To Top" button to detect the footer
-$(document).ready(function () {
-  $(window).scroll(function () {
-    console.log($(window).scrollTop());
-    //The button will be hidden until we scroll more than the window's height
-    if ($(window).scrollTop() < $(window).height()) {
-      $("#btnScrollToTop").css("visibility", "hidden");
-    } else {
-      $("#btnScrollToTop").css("visibility", "visible");
-      //The button will change it's color when it hits the footer
-      if (
-        $(window).scrollTop() + $(window).height() >
-        $(document).height() - 838
-      ) {
-        // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
-        $("#btnScrollToTop").css("background-color", "#6a00bb");
-      } else {
-        $("#btnScrollToTop").css("background-color", "#6a00bb");
-      }
-    }
-  });
+$(document).ready(function() {
+    $(window).scroll(function() {
+        console.log($(window).scrollTop());
+        //The button will be hidden until we scroll more than the window's height
+        if ($(window).scrollTop() < $(window).height()) {
+            $("#btnScrollToTop").css("visibility", "hidden");
+        } else {
+            $("#btnScrollToTop").css("visibility", "visible");
+            //The button will change it's color when it hits the footer
+            if (
+                $(window).scrollTop() + $(window).height() >
+                $(document).height() - 838
+            ) {
+                // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
+                $("#btnScrollToTop").css("background-color", "#6a00bb");
+            } else {
+                $("#btnScrollToTop").css("background-color", "#6a00bb");
+            }
+        }
+    });
 });
 
 //function to scroll to top
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
 };
 
 // Window Loads
-$(function () {
-  let bodyElement = $(`body`);
-  bodyElement.prepend(header);
-  bodyElement.append(footer);
-  bodyElement.append(upArrow);
-  $("#btnScrollToTop").css("visibility", "hidden");
+$(function() {
+    let bodyElement = $(`body`);
+    bodyElement.prepend(header);
+    bodyElement.append(footer);
+    bodyElement.append(upArrow);
+    $("#btnScrollToTop").css("visibility", "hidden");
 
-  //toggler hamburger functions
-  const menuBtn = document.querySelector(".navbar-toggler");
-  let menuOpen = false;
-  menuBtn.addEventListener("click", () => {
-    if (!menuOpen) {
-      menuBtn.classList.add("open");
-      menuOpen = true;
-    } else {
-      menuBtn.classList.remove("open");
-      menuOpen = false;
-    }
-  });
+    //toggler hamburger functions
+    const menuBtn = document.querySelector(".navbar-toggler");
+    let menuOpen = false;
+    menuBtn.addEventListener("click", () => {
+        if (!menuOpen) {
+            menuBtn.classList.add("open");
+            menuOpen = true;
+        } else {
+            menuBtn.classList.remove("open");
+            menuOpen = false;
+        }
+    });
 });
 
 // function for toggling hamburger is-active class
 
-$(function () {
-  $("#js-hamburger").on("click", function () {
-    $(this).toggleClass("is-active");
-  });
+$(function() {
+    $("#js-hamburger").on("click", function() {
+        $(this).toggleClass("is-active");
+    });
 });
 
 // Navbar current page highlight
@@ -324,59 +313,58 @@ let loader = document.querySelector(".loader-container");
 window.addEventListener("load", vanish);
 
 function vanish() {
-  loader.classList.add("disappear");
+    loader.classList.add("disappear");
 }
-$(function () {
-  $("a.nav-link").each(function () {
-    if ($(this).prop("href") == window.location.href) {
-      $(this).addClass("current-link");
-    }
-  });
+$(function() {
+    $("a.nav-link").each(function() {
+        if ($(this).prop("href") == window.location.href) {
+            $(this).addClass("current-link");
+        }
+    });
 });
 
 //function to remove underline on hover
 
-$(document).ready(function () {
-  $("a.nav-link").hover(
-    function () {
-      $(this).removeClass("current-link");
-    },
-    function () {
-      if ($(this).prop("href") == window.location.href) {
-        $(this).addClass("current-link");
-      }
-    }
-  );
+$(document).ready(function() {
+    $("a.nav-link").hover(
+        function() {
+            $(this).removeClass("current-link");
+        },
+        function() {
+            if ($(this).prop("href") == window.location.href) {
+                $(this).addClass("current-link");
+            }
+        }
+    );
 });
 
 function toggle_light_mode() {
-  var app = document.getElementsByTagName("HTML")[0];
-  var nav = document.getElementById("navbar");
-  if (localStorage.lightMode == "dark") {
-    localStorage.lightMode = "light";
-    app.setAttribute("light-mode", "light");
-    nav.classList.remove("dark-theme");
-  } else {
-    nav.classList.add("dark-theme");
-    localStorage.lightMode = "dark";
-    app.setAttribute("light-mode", "dark");
-  }
+    var app = document.getElementsByTagName("HTML")[0];
+    var nav = document.getElementById("navbar");
+    if (localStorage.lightMode == "dark") {
+        localStorage.lightMode = "light";
+        app.setAttribute("light-mode", "light");
+        nav.classList.remove("dark-theme");
+    } else {
+        nav.classList.add("dark-theme");
+        localStorage.lightMode = "dark";
+        app.setAttribute("light-mode", "dark");
+    }
 }
 
 
-window.addEventListener("storage", function () {
-  if (localStorage.lightMode == "dark") {
-    app.setAttribute("light-mode", "dark");
-  } else {
-    app.setAttribute("light-mode", "light");
-  }
+window.addEventListener("storage", function() {
+    if (localStorage.lightMode == "dark") {
+        app.setAttribute("light-mode", "dark");
+    } else {
+        app.setAttribute("light-mode", "light");
+    }
 }, false);
 
 // Function to remove scroll bar during preload
 $(window).on('load', function() {
 
-  $('.loader-container').fadeOut(2500, function() {
-    $('.no-scroll-preload').css('overflow', 'visible');
-  });
+    $('.loader-container').fadeOut(2500, function() {
+        $('.no-scroll-preload').css('overflow', 'visible');
+    });
 });
-
